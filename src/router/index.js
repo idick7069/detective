@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import HelloWorld from '../components/HelloWorld.vue';
 import Container from '../components/Container.vue';
 import Welcome from '../components/Welcome.vue';
+import Town from '../components/Town.vue';
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
         path: '/Welcome',
         name: 'Welcome',
         component: Welcome
+      },
+      {
+        path: '/Town',
+        name: 'Town',
+        component: Town
       }
     ]
   },

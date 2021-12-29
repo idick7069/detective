@@ -70,14 +70,14 @@ import logo from '../assets/logo.png'
       group: null,
       logo,
        items: [
-          { title: 'Dashboard', icon: 'mdi-view-dashboard' ,url:'HelloWorld'},
-          { title: 'Account', icon: 'mdi-account-box' ,url:'Welcome'},
-          { title: 'Admin', icon: 'mdi-gavel' },
+          { title: 'HelloWorld', icon: 'mdi-view-dashboard' ,url:'HelloWorld'},
+          { title: 'Welcome', icon: 'mdi-account-box' ,url:'Welcome'},
+          { title: 'Town', icon: 'mdi-gavel', url:'Town' },
         ],
     }),
     methods:{
       loadPage(name){
-        alert(name)
+        // alert(name)
         this.$router.push({ name: name })
       }
     }
