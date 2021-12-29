@@ -1,25 +1,30 @@
 <template>
 
     <!-- Provides the application the proper gutter -->
-    <v-container>
-        <div class="scene" v-html="house"></div>
+    <v-container >
+        <div class="scene" v-html="iconRaw"></div>
+        
     </v-container>
 
 </template>
 
-
 <script>
 import house from '../assets/town_house.svg'
+import iconRaw from '../assets/town_house.svg?raw'
     export default ({
         name: 'Town',
          data: () => ({
-           house
+          scene_door: '',
+          iconRaw
         }),
-        // mounted() {
-        //     var vobj = this
-        //     $.get('../assets/town_house.svg', function (res) {
-        //         vobj.scene_door = res
-        //     }, 'text')
-        // }
+        mounted() {
+        
+        }
     })
 </script>
+<style scoped>
+ .scene{
+     height: 100vh;
+     widows: 100vw;
+ }
+</style>

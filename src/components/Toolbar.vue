@@ -29,14 +29,15 @@
           :key="item.title"
           color = "#FFFFFF"
           class="tile"
-          height="125"
+          height="125px"
           density="comfortable"
+          v-on:click="loadPage(item.url)"
         >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
 
-          <v-list-item-content v-on:click="loadPage(item.url)">
+          <v-list-item-content >
             <v-list-item-title >{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
