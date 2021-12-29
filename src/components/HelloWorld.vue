@@ -1,5 +1,6 @@
 <template>
-  <v-container>
+<v-main>
+  <v-container fluid>
     <v-row class="text-center">
       <v-col cols="12">
         <v-img
@@ -91,6 +92,7 @@
       </v-col>
     </v-row>
   </v-container>
+  </v-main>
 </template>
 
 <script>

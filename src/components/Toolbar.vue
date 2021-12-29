@@ -1,48 +1,94 @@
 <template>
 <div id="toolbar">
    <v-layout style="overflow: hidden">
-    <v-app-bar
-      absolute
-      color="deep-purple"
+   <v-app-bar app color="transparent" border="false" height="180">
+      <!-- <v-app-bar-nav-icon @click="drawer = !drawer" style="background-color:'tansparent'">
+             <v-icon>mdi-menu</v-icon>
+      </v-app-bar-nav-icon> -->
+      <v-btn
+      flat
+      color ="transparent"
     >
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Title</v-toolbar-title>
+       <v-img :src="logo" width="180" height="500" @click="drawer = !drawer" position="0 0"></v-img>
+    </v-btn>
+    
+     
+     
     </v-app-bar>
     <v-navigation-drawer
       v-model="drawer"
-      absolute
-      temporary
+      color ="#9FE8FF"
+      rail-width = "640"
     >
       <v-list
         nav
         dense
       >
-        <v-list-item-group
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          color = "#FFFFFF"
+          class="tile"
+          height="125"
+          density="comfortable"
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content v-on:click="loadPage(item.url)">
+            <v-list-item-title >{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <!-- <v-list-item-group
           v-model="group"
           active-class="deep-purple--text text--accent-4"
         >
-          <v-list-item prepend-icon="mdi-home" title="Home"></v-list-item>
+          <v-list-item prepend-icon="mdi-home" title="Home" v-on:click="loadPage('HelloWorld')"/>
 
-          <v-list-item prepend-icon="mdi-account" title="Account"></v-list-item>
-        </v-list-item-group>
+          <v-list-item prepend-icon="mdi-account" title="Account" v-on:click="loadPage('Welcome')">
+         
+          </v-list-item>
+        </v-list-item-group> -->
       </v-list>
     </v-navigation-drawer>
-    <v-main>
+    <!-- <v-main style="padding:0px">
       <v-card
-        class="mx-auto overflow-hidden"
         height="400"
-      ></v-card>
-    </v-main>
+         color="#385F73"
+      ></v-card> 
+    </v-main> -->
   </v-layout>
 </div>
 </template>
 
 <script>
+import logo from '../assets/logo.png'
   export default {
     data: () => ({
       drawer: false,
       group: null,
+      logo,
+       items: [
+          { title: 'Dashboard', icon: 'mdi-view-dashboard' ,url:'HelloWorld'},
+          { title: 'Account', icon: 'mdi-account-box' ,url:'Welcome'},
+          { title: 'Admin', icon: 'mdi-gavel' },
+        ],
     }),
+    methods:{
+      loadPage(name){
+        alert(name)
+        this.$router.push({ name: name })
+      }
+    }
   }
 </script>
+
+<style scoped>
+  .tile:hover {
+    background: #67C2EF80;
+  }
+  .tile{
+    background: #67C2EF;
+  }
+</style>
