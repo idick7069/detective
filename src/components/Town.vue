@@ -3,7 +3,6 @@
     <!-- Provides the application the proper gutter -->
     <v-container >
         <div class="scene" v-html="iconRaw"></div>
-        
     </v-container>
 
 </template>
@@ -15,7 +14,8 @@ import iconRaw from '../assets/town_house.svg?raw'
         name: 'Town',
          data: () => ({
           scene_door: '',
-          iconRaw
+          iconRaw,
+          hidden: false,
         }),
         mounted() {
         

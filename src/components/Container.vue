@@ -1,9 +1,9 @@
 <template>
     <!-- Sizes your content based upon application components -->
-    <v-main style="padding:0px">
+    <v-main style="padding:0px" >
 
         <!-- Provides the application the proper gutter -->
-        <v-container>
+        <v-container fluid >
             <!-- <v-img :src="welcome" class="my-3" contain height="200" /> -->
             <!-- If using vue-router -->
             <router-view></router-view>
