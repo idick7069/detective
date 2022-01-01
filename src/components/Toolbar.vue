@@ -69,12 +69,12 @@
         {
           title: '自我檢測量表',
           icon: 'mdi-gavel',
-          url: 'HelloWorld'
+          url: 'Scale'
         },
         {
           title: '療癒舒緩看這邊',
           icon: 'mdi-gavel',
-          url: '/'
+          url: 'HelloWorld'
         },
         {
           title: '身心症懶人包',

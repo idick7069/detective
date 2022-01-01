@@ -4,6 +4,8 @@ import HelloWorld from '../components/HelloWorld.vue';
 import Container from '../components/Container.vue';
 import Welcome from '../components/Welcome.vue';
 import Town from '../components/Town.vue';
+import Scale from '../components/Scale.vue';
+import Stomach from '../components/Stomach.vue';
 
 const routes = [
   {
@@ -24,6 +26,14 @@ const routes = [
         path: '/Town',
         name: 'Town',
         component: Town
+      },{
+        path: '/Scale',
+        name: 'Scale',
+        component: Scale
+      },{
+        path: '/Stomach',
+        name: 'Stomach',
+        component: Stomach
       }
     ]
   },

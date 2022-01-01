@@ -3,12 +3,13 @@
     <v-container fluid>
       <v-row class="text-center">
         <v-col cols="12">
-          <v-img :src="logo" class="my-3" contain height="200" />
+          <v-img :src="logo" class="my-3" contain height="200px"  />
         </v-col>
 
         <v-col class="mb-4">
-          <h1 class="display-2 font-weight-bold mb-3">
-            <div>Welcome to the Vuetify 3 Alpha</div>
+          <h1 class="display-2 font-weight-bold mb-3" v-bind:style="{cursor: selectedCursor}" >
+            <div>Welcome to the Vuetify 3 Alpha 1123123</div>
+             <img :src="logo2"/>
           </h1>
 
           <small>Vite Preview</small>
@@ -61,12 +62,15 @@
 </template>
 
 <script>
-  import logo from '../assets/logo.svg'
-
+  import logo from '../assets/logo.svg?url'
+  import logo2 from '../assets/magnifier_cursor.png'
   export default {
     name: 'HelloWorld',
     setFontLoaded() {
       this.$emit('font-loaded');
+    },
+    mounted(){
+      console.log(logo2);
     },
     data: () => ({
       ecosystem: [{
@@ -100,6 +104,9 @@
         },
       ],
       logo,
+      logo2,
+      // selectedCursor: `url("`+logo2+`") 2 2, pointer`,
+        selectedCursor: `url("`+logo2+`") 2 2, help`,
       whatsNext: [{
           text: 'Explore components',
           href: 'https://vuetifyjs.com',
