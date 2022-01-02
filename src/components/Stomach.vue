@@ -1,8 +1,8 @@
 <template>
-  <v-container>
+  <!-- <v-container> -->
     <div class="stomach_background" v-html="stomachBackground"></div>
     <div class="stomach" v-html="stomach"></div>
-  </v-container>
+  <!-- </v-container> -->
 </template>
 
 <script>
@@ -25,13 +25,13 @@
 <style>
   .stomach {
     height: 100vh;
-    widows: 100vw;
+    width: 100vw;
     position: absolute;
   }
 
   .stomach_background {
     height: 100vh;
-    widows: 100vw;
+    width: 100vw;
     position: absolute;
   }
 

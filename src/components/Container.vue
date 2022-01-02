@@ -6,12 +6,12 @@
             <router-view></router-view>
             <div>
                 <v-btn class="fixedContainer" color="pink" dark bottom right>
-                    <v-dialog v-model="dialog" activator="parent" fullscreen>
-                        <div>
-
-                            <div class="manual_item_1" v-html="manual_item_1"></div>
+                    <v-dialog v-model="dialog" activator="parent" fullscreen >
+                       
                             <div class="book" v-html="book"></div>
-                        </div>
+                            <!-- <v-img  class="manual_item_1" :src="manual_item_1"></v-img> -->
+                            <div class="manual_item_1" v-html="manual_item_1"></div>
+                       
                     </v-dialog>
                 </v-btn>
             </div>
@@ -35,7 +35,12 @@
         }),
         mounted() {
 
-        }
+        },
+        methods: {
+          say: function (message) {
+      alert(message)
+    }
+        },
     };
 </script>
 <style scoped>
@@ -50,12 +55,13 @@
         position: fixed;
         transform: translate(-50px, -50px);
     }
-
-    /* .manual_item_1 {
-        height: 100vh;
-        widows: 100vw;
+    .book{
         position: absolute;
-    } */
+    }
+    .manual_item_1 {
+        pointer-events: none;
+        position: absolute;
+    }
 </style>
 <style>
     [data-name="red_tag"] {
