@@ -15,12 +15,12 @@ const routes = [
     children: [
       {
         path: '/',
-        name: 'HelloWorld',
-        component: HelloWorld,
-      }, {
-        path: '/Welcome',
         name: 'Welcome',
-        component: Welcome
+        component: Welcome,
+      }, {
+        path: '/HelloWorld',
+        name: 'HelloWorld',
+        component: HelloWorld
       },
       {
         path: '/Town',

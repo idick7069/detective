@@ -63,7 +63,6 @@
 
 <script>
   import logo from '../assets/logo.svg?url'
-  import logo2 from '../assets/magnifier_cursor.png'
   export default {
     name: 'HelloWorld',
     setFontLoaded() {
@@ -104,9 +103,6 @@
         },
       ],
       logo,
-      logo2,
-      // selectedCursor: `url("`+logo2+`") 2 2, pointer`,
-        selectedCursor: `url("`+logo2+`") 2 2, help`,
       whatsNext: [{
           text: 'Explore components',
           href: 'https://vuetifyjs.com',

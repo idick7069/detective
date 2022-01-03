@@ -3,15 +3,15 @@
     <v-main style="padding: 0px">
         <!-- Provides the application the proper gutter -->
         <v-container fluid>
-            <router-view></router-view>
+            <router-view v-model="inputValue"></router-view>
             <div>
-                <v-btn class="fixedContainer" color="pink" dark bottom right>
-                    <v-dialog v-model="dialog" activator="parent" fullscreen >
-                       
-                            <div class="book" v-html="book"></div>
-                            <!-- <v-img  class="manual_item_1" :src="manual_item_1"></v-img> -->
-                            <div class="manual_item_1" v-html="manual_item_1"></div>
-                       
+                <v-btn class="fixedContainer" dark bottom right height="100" width="100" color="transparent"
+                    variant="default">
+                    <div v-html="inputValue"></div>
+                    <v-dialog v-model="dialog" activator="parent" fullscreen>
+                        <div class="book" v-html="book"></div>
+                        <!-- <v-img  class="manual_item_1" :src="manual_item_1"></v-img> -->
+                        <div class="manual_item_1" v-html="manual_item_1"></div>
                     </v-dialog>
                 </v-btn>
             </div>
@@ -26,20 +26,22 @@
 
     import book from "../assets/manual.svg?raw";
     import manual_item_1 from "../assets/manual_item_1.svg?raw"
+    import scale_icon from "../assets/icon/scale_icon.svg?url"
     export default {
         name: "Container",
         data: () => ({
             dialog: false,
             book,
-            manual_item_1
+            manual_item_1,
+            inputValue: '<img width="100" height="100" src="' + scale_icon + '"></img>'
         }),
         mounted() {
 
         },
         methods: {
-          say: function (message) {
-      alert(message)
-    }
+            say: function (message) {
+                alert(message)
+            }
         },
     };
 </script>
@@ -55,9 +57,11 @@
         position: fixed;
         transform: translate(-50px, -50px);
     }
-    .book{
+
+    .book {
         position: absolute;
     }
+
     .manual_item_1 {
         pointer-events: none;
         position: absolute;

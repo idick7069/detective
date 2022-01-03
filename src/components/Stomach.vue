@@ -1,14 +1,15 @@
 <template>
   <!-- <v-container> -->
-    <div class="stomach_background" v-html="stomachBackground"></div>
-    <div class="stomach" v-html="stomach"></div>
+  <div class="stomach_background" v-html="stomachBackground"></div>
+  <div class="stomach" v-html="stomach"></div>
   <!-- </v-container> -->
 </template>
 
 <script>
-  import stomach from "../assets/stomach.svg?raw";
-  import stomachBackground from '../assets/stomach_background.svg?raw';
-  import cursorIcon from '../assets/magnifier_cursor.png'
+  import stomach from "../assets/stomach_scene/stomach_obj.svg?raw";
+  import stomachBackground from '../assets/stomach_scene/stomach_bg.svg?raw';
+  import cursorIcon from '../assets/cursor/magnifier_cursor.png'
+  import manualIcon from '../assets/icon/manual_icon.svg?url'
   export default {
     name: "Stomach",
     data: () => ({
@@ -19,7 +20,13 @@
     }),
     mounted() {
       console.log(cursorIcon);
+      this.$emit('update:inputValue', '<v-img src="'+manualIcon+'"></v-img>' );
     },
+    props: {
+      inputValue: {
+        type: String
+      }
+    }
   };
 </script>
 <style>
@@ -35,7 +42,7 @@
     position: absolute;
   }
 
-  [data-name="smoke"] {
+  [data-name="cigarette"] {
     cursor: v-bind(selectedCursor);
   }
 </style>
