@@ -10,12 +10,16 @@ export const store = createStore({
   state () {
     return {
       count: 0,
-      floatingTemplate:''
+      floatingTemplate:'',
+      floatingDialog: true
     }
   },
   getters:{
     getFloatingTemplate(state){
       return state.floatingTemplate
+    },
+    getFloatingDialog(state){
+      return state.floatingDialog
     }
   },
   mutations: {
@@ -24,6 +28,9 @@ export const store = createStore({
     },
     setFloatingTemplate(state, value) {
       state.floatingTemplate = value
+    },
+    setFloatingDialog(state, value) {
+      state.floatingDialog = value
     }
   }
 })
