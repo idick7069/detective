@@ -10,6 +10,9 @@
   import stomachBackground from '../assets/stomach_scene/stomach_bg.svg?raw';
   import cursorIcon from '../assets/cursor/magnifier_cursor.png'
   import manualIcon from '../assets/icon/manual_icon.svg?url'
+  import {
+    useStore
+  } from 'vuex';
   export default {
     name: "Stomach",
     data: () => ({
@@ -19,13 +22,8 @@
       selectedCursor: `url("` + cursorIcon + `") 2 2, help`,
     }),
     mounted() {
-      console.log(cursorIcon);
-      this.$emit('update:inputValue', '<v-img src="'+manualIcon+'"></v-img>' );
-    },
-    props: {
-      inputValue: {
-        type: String
-      }
+      console.log(this.$store.state.count);
+      this.$store.commit('setFloatingTemplate', '<v-img src="' + manualIcon + '"></v-img>');
     }
   };
 </script>
