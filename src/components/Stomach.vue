@@ -4,9 +4,9 @@
 
 
     <div class="stomach_background" v-html="stomachBackground"></div>
-    <div class="stomach" v-html="stomach"></div>
-    <v-img class="stomach_hint" :src="stomachHint" @click="isActive = true"
-      v-bind:style='{"display": (isActive? "none" : "block" )}'></v-img>
+    <div class="stomach" v-html="stomach" @click="onClick($event)"></div>
+    <!-- <v-img class="stomach_hint" :src="stomachHint" @click="isActive = true"
+      v-bind:style='{"display": (isActive? "none" : "block" )}'></v-img> -->
   </v-responsive>
   <!-- </v-container> -->
 </template>
@@ -29,6 +29,16 @@
       selectedCursor: `url("` + cursorIcon + `") 2 2, help`,
       isActive: false
     }),
+    methods: {
+      onClick(event) {
+
+        let targetId = event.target.id
+        console.log(targetId)
+        if (targetId == 'cigarette') {
+          this.$store.commit("setDialogOpen", true);
+        }
+      },
+    },
     //onCreate
     mounted() {
       this.$store.commit(

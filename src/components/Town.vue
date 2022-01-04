@@ -6,7 +6,7 @@
 
   <div class="townBackground" ref="responsive" v-html="townBackground"></div>
   <div class="townCar" v-html="townCar"></div>
-  <div class="townBuilding" v-html="townBuilding" ref="mydiv" @click="initTab($event)" @mouseover="nextTab($event)">
+  <div class="townBuilding" v-html="townBuilding"  @click="onClick($event)" @mouseover="nextTab($event)">
   </div>
 
   <!-- </v-container> -->
@@ -27,7 +27,7 @@
       nextTab(event) {
         console.log("You clicked on an element with class name = " + event.target.id);
       },
-      initTab(event) {
+      onClick(event) {
         let targetId = event.target.id
         if (targetId == 'stomach') {
           document.querySelector('[data-name="pin-stomach"]').style.animation = 'none';

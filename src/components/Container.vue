@@ -11,7 +11,7 @@
             <div class="dialogBg" v-html="dialogBgHtml"></div>
             <div class="dialogContent" v-html="dialogContentHtml"></div>
             <v-btn flat color="transparent" width="80" height="80" class="closeBtn" position="absolute" right top>
-              <v-img :src="close_icon" @click="dialog = false"></v-img>
+              <v-img :src="close_icon" @click="closeDialog()"></v-img>
             </v-btn>
           </v-dialog>
         </v-btn>
@@ -50,6 +50,9 @@
       this.inputValue = this.$store.state.floatingTemplate;
 
       this.$store.commit("setFloatingDialog", true);
+
+      this.$store.commit("setDialogOpen", false);
+      this.dialog = this.$store.state.dialogOpen;
     },
     watch: {
       "$store.state.floatingTemplate": function (newVal) {
@@ -64,11 +67,19 @@
           this.dialogContentHtml = scale_content;
         }
       },
+      "$store.state.dialogOpen": function (newVal) {
+        console.log("狀態改變")
+        this.dialog = this.$store.state.dialogOpen;
+      },
     },
     methods: {
       say: function (message) {
         alert(message);
       },
+      closeDialog() {
+        this.dialog = false
+        this.$store.commit("setDialogOpen", false);
+      }
     },
   };
 </script>

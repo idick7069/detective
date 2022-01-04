@@ -27,7 +27,8 @@ export const store = createStore({
         park: false,
         nerve: false,
         community: false,
-      }
+      },
+      dialogOpen: false
     }
   },
   getters: {
@@ -39,6 +40,9 @@ export const store = createStore({
     },
     getTownSelected(state, value) {
       return state.townSelected
+    },
+    getTownSelected(state) {
+      return state.dialogOpen
     }
   },
   mutations: {
@@ -53,6 +57,9 @@ export const store = createStore({
     },
     setTownSelected(state, value) {
       state.townSelected = value
+    },
+    setDialogOpen(state, value) {
+      state.dialogOpen = value
     }
   }
 })
