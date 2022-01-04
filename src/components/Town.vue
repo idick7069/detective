@@ -54,7 +54,7 @@
       },
     },
     mounted() {
-      this.resizeSvg();
+      // this.resizeSvg();
     },
   }
 </script>
@@ -62,8 +62,8 @@
   .townCar,
   .townBackground,
   .townBuilding {
-    height: 56.25vw;
-    width: 100vw;
+    /* height: 56.25vw;
+    width: 100vw; */
     position: absolute;
   }
 
