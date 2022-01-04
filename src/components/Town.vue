@@ -4,9 +4,10 @@
   <!-- <v-container> -->
 
 
-  <div class="townBackground" v-html="townBackground"></div>
+  <div class="townBackground" ref="responsive" v-html="townBackground"></div>
   <div class="townCar" v-html="townCar"></div>
-  <div class="townBuilding" v-html="townBuilding" ref="mydiv" @click="initTab($event)"></div>
+  <div class="townBuilding" v-html="townBuilding" ref="mydiv" @click="initTab($event)" @mouseover="nextTab($event)">
+  </div>
 
   <!-- </v-container> -->
 </template>
@@ -23,46 +24,45 @@
       townCar,
     }),
     methods: {
-      nextTab() {
-        console.log("You clicked on an element with class name =element")
+      nextTab(event) {
+        console.log("You clicked on an element with class name = " + event.target.id);
       },
       initTab(event) {
         let targetId = event.target.id
-        console.log(targetId)
         if (targetId == 'stomach') {
+          document.querySelector('[data-name="pin-stomach"]').style.animation = 'none';
           this.$router.push({
             name: "Stomach"
           })
         }
-        // let targetClassNames = event.target.className.split(" ");
-        // targetClassNames.filter(e => {
-        //   // if (e === "element") {
-        //   console.log( e)
-        //   // this.nextTab();
-        //   // }
-        // });
-      }
+      },
+      resizeSvg() {
+        console.log("resize");
+        console.log(this.$refs.responsive.clientHeight);
+        var containerHeight = this.$refs.responsive.clientHeight;
+        var containerWidth = this.$refs.responsive.clientWidth;
+        document.getElementById("town-car").setAttribute("width", containerWidth);
+        document.getElementById("town-building").setAttribute("width", containerWidth);
+        document.getElementById("town-bg").setAttribute("width", containerWidth);
+        document.getElementById("town-car").setAttribute("height", containerHeight);
+        document.getElementById("town-building").setAttribute("height", containerHeight);
+        document.getElementById("town-bg").setAttribute("height", containerHeight);
+        document.getElementById("town-building").setAttribute("viewBox", "0 0 " + containerWidth + " " +
+          containerHeight);
+        document.getElementById("town-car").setAttribute("viewBox", "0 0 " + containerWidth + " " + containerHeight);
+        document.getElementById("town-bg").setAttribute("viewBox", "0 0 " + containerWidth + " " + containerHeight);
+      },
     },
     mounted() {
-      var router = this.$router;
-
-      // this.$refs['mydiv'].firstChild.addEventListener('click', function (event) {
-      //   event.preventDefault();
-      //   console.log('clicked: ', event.target.name);
-      //   router.push({
-      //     name: "Stomach"
-      //   })
-      // })
-
-
+      this.resizeSvg();
     },
-  };
+  }
 </script>
 <style>
   .townCar,
   .townBackground,
   .townBuilding {
-    height: 100vh;
+    height: 56.25vw;
     width: 100vw;
     position: absolute;
   }

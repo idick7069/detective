@@ -57,7 +57,7 @@
       },
       "$store.state.floatingDialog": function (newVal) {
         if ((newVal == false)) {
-          this.dialogBgHtml = book;
+          this.dialogBgHtml = manual;
           this.dialogContentHtml = manual_item_1;
         } else {
           this.dialogBgHtml = scale_form;

@@ -3,15 +3,17 @@
 
   <!-- Provides the application the proper gutter -->
   <v-container>
-    <v-responsive :aspect-ratio="16/9">
-      <v-img :width="width" :src="welcome"> </v-img>
-    </v-responsive>
+    <!-- <v-responsive :aspect-ratio="16/9"> -->
+    <v-img :width="width" :height="height" :src="welcome"> </v-img>
+    <!-- </v-responsive> -->
     <!-- <div style="height:1080px width:1920">
-                <v-img :src="welcome" />
-            </div> -->
+      <v-img :src="welcome" />
+    </div> -->
     <!-- <v-img :width="width" :height="height" :src="welcome"> </v-img>   -->
-    <Town></Town>
-
+    <!-- <v-responsive :aspect-ratio="16/9"> -->
+    <v-responsive :aspect-ratio="16/9">
+      <Town :width="width" :height="height"></Town>
+    </v-responsive>
   </v-container>
 </template>
 
@@ -23,6 +25,7 @@
     name: "Container",
     data: () => ({
       width: "100vw",
+      height: "56.25vw",
       welcome,
     }),
     components: {

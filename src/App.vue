@@ -1,18 +1,17 @@
 <template>
   <v-app>
-    <v-main>
-      <router-view/>
+    <v-main style="background-color: #D1DFE8">
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
+  export default {
+    name: 'App',
 
-export default {
-  name: 'App',
-
-  data: () => ({
-    //
-  }),
-}
+    data: () => ({
+      //
+    }),
+  }
 </script>
