@@ -59,7 +59,7 @@
       items: [{
           title: '何謂身心症',
           icon: 'mdi-view-dashboard',
-          url: 'Town'
+          url: ''
         },
         {
           title: '身心症狀報你知',
@@ -74,22 +74,22 @@
         {
           title: '療癒舒緩看這邊',
           icon: 'mdi-gavel',
-          url: 'HelloWorld'
+          url: ''
         },
         {
           title: '身心症懶人包',
           icon: 'mdi-gavel',
-          url: '/'
+          url: ''
         },
         {
           title: '相關影片',
           icon: 'mdi-gavel',
-          url: '/'
+          url: ''
         },
         {
           title: '關於我們',
           icon: 'mdi-gavel',
-          url: '/'
+          url: ''
         },
       ],
     }),
