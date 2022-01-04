@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import townBuilding from "../assets/town.svg?raw";
+  import townBuilding from "../assets/town_scene/town_building.svg?raw";
   import townBackground from "../assets/town_scene/town_bg.svg?raw";
   import townCar from "../assets/town_scene/town_car.svg?raw";
   export default {
@@ -104,18 +104,19 @@
     transition: all 500ms ease-in-out;
   }
 
-  #pin-station,
-  #pin-school,
-  #pin-stomach,
-  #pin-lung,
-  #pin-heart,
-  #pin-park,
-  #pin-nerve,
-  #pin-community {
+  [data-name="pin-station"],
+  [data-name="pin-school"],
+  [data-name="pin-stomach"],
+  [data-name="pin-lung"],
+  [data-name="pin-heart"],
+  [data-name="pin-park"],
+  [data-name="pin-nerve"],
+  [data-name="pin-community"] {
     animation: floating 2s infinite;
     transform-origin: center center;
     transform-box: fill-box;
   }
+
 
   @keyframes floating {
     0% {
