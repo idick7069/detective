@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Toolbar/>
+    <!-- <Toolbar/> -->
     <Container/>
   </div>
 </template>
