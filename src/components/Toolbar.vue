@@ -1,7 +1,7 @@
 <template>
   <div id="toolbar">
     <v-layout style="overflow: hidden">
-      <v-app-bar app color="transparent" border="false" height="180">
+      <v-app-bar app color="transparent" border="false" height="180" style="pointer-events: none;">
         <!-- <v-app-bar-nav-icon @click="drawer = !drawer" style="background-color:'tansparent'">
              <v-icon>mdi-menu</v-icon>
       </v-app-bar-nav-icon> -->

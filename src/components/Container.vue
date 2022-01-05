@@ -2,21 +2,21 @@
   <!-- Sizes your content based upon application components -->
   <v-main style="padding: 0px">
     <!-- Provides the application the proper gutter -->
-    <v-container fluid>
-      <router-view></router-view>
-      <div>
-        <v-btn class="fixedContainer" dark bottom right height="100" width="100" color="red" variant="default">
-          <div v-html="inputValue"></div>
-          <v-dialog v-model="dialog" activator="parent" fullscreen>
-            <div class="dialogBg" v-html="dialogBgHtml"></div>
-            <div class="dialogContent" v-html="dialogContentHtml"></div>
-            <v-btn flat color="transparent" width="80" height="80" class="closeBtn" position="absolute" right top>
-              <v-img :src="close_icon" @click="closeDialog()"></v-img>
-            </v-btn>
-          </v-dialog>
-        </v-btn>
-      </div>
-    </v-container>
+    <!-- <v-container fluid> -->
+    <router-view></router-view>
+    <div>
+      <v-btn class="fixedContainer" dark bottom right height="100" width="100" color="red" variant="default">
+        <div v-html="inputValue"></div>
+        <v-dialog v-model="dialog" activator="parent" fullscreen>
+          <div class="dialogBg" v-html="dialogBgHtml"></div>
+          <div class="dialogContent" v-html="dialogContentHtml"></div>
+          <v-btn flat color="transparent" width="80" height="80" class="closeBtn" position="absolute" right top>
+            <v-img :src="close_icon" @click="closeDialog()"></v-img>
+          </v-btn>
+        </v-dialog>
+      </v-btn>
+    </div>
+    <!-- </v-container> -->
   </v-main>
 </template>
 
@@ -50,7 +50,6 @@
       this.inputValue = this.$store.state.floatingTemplate;
 
       this.$store.commit("setFloatingDialog", true);
-
       this.$store.commit("setDialogOpen", false);
       this.dialog = this.$store.state.dialogOpen;
     },
@@ -68,7 +67,6 @@
         }
       },
       "$store.state.dialogOpen": function (newVal) {
-        console.log("狀態改變")
         this.dialog = this.$store.state.dialogOpen;
       },
     },
@@ -86,7 +84,7 @@
 <style scoped>
   @media (min-width: 1920px) {
     .v-container {
-      max-width: 1920px;
+      max-width: 100vw;
       padding: 0px;
     }
   }

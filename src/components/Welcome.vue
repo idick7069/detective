@@ -3,20 +3,20 @@
 
   <!-- Provides the application the proper gutter -->
 
-  <v-container>
-    <Toolbar />
-    <!-- <v-responsive :aspect-ratio="16/9"> -->
-    <v-img :width="width" :height="height" :src="welcome"> </v-img>
-    <!-- </v-responsive> -->
-    <!-- <div style="height:1080px width:1920">
+  <!-- <v-container> -->
+  <Toolbar />
+  <!-- <v-responsive :aspect-ratio="16/9"> -->
+  <v-img :width="width" :src="welcome"> </v-img>
+  <!-- </v-responsive> -->
+  <!-- <div style="height:1080px width:1920">
       <v-img :src="welcome" />
     </div> -->
-    <!-- <v-img :width="width" :height="height" :src="welcome"> </v-img>   -->
-    <!-- <v-responsive :aspect-ratio="16/9"> -->
-    <v-responsive :aspect-ratio="16/9">
-      <Town :width="width" :height="height"></Town>
-    </v-responsive>
-  </v-container>
+  <!-- <v-img :width="width" :height="height" :src="welcome"> </v-img>   -->
+  <!-- <v-responsive :aspect-ratio="16/9"> -->
+  <v-responsive :aspect-ratio="16/9">
+    <Town></Town>
+  </v-responsive>
+  <!-- </v-container> -->
 </template>
 
 

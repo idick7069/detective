@@ -1,17 +1,18 @@
 <template>
   <!-- <v-container> -->
-  <v-responsive :aspect-ratio="16/9">
+  <div ref="responsive" style="width:100vw;height:56.25vw">
 
 
     <div class="stomach_background" v-html="stomachBackground"></div>
     <div class="stomach" v-html="stomach" @click="onClick($event)"></div>
-    <!-- <v-img class="stomach_hint" :src="stomachHint" @click="isActive = true"
+  </div>
+  <!-- <v-img class="stomach_hint" :src="stomachHint" @click="isActive = true"
       v-bind:style='{"display": (isActive? "none" : "block" )}'></v-img> -->
-    <v-btn flat color="rgba(220, 220, 220, 0.8)" width="180" height="180">
-      <v-img :src="logoutIcon" @click="leavePage()" position="0 0"></v-img>
-    </v-btn>
+  <v-btn flat color="rgba(220, 220, 220, 0.8)" width="180" height="180">
+    <v-img :src="logoutIcon" @click="leavePage()" position="0 0"></v-img>
+  </v-btn>
 
-  </v-responsive>
+
   <!-- </v-container> -->
 </template>
 
@@ -47,9 +48,55 @@
           this.$store.commit("setDialogOpen", true);
         }
       },
+      resizeChild(myElement, widthScale, heightScale) {
+
+        for (let i = 0; i < myElement.children.length; i++) {
+          var reSizeWidth = myElement.children[i].getAttribute("width") * widthScale
+          var reSizeHeight = myElement.children[i].getAttribute("height") * heightScale
+          myElement.children[i].setAttribute("width", reSizeWidth);
+          myElement.children[i].setAttribute("height", reSizeHeight);
+          var originalx = myElement.children[i].getAttribute("x")
+          if (originalx != null) {
+            myElement.children[i].setAttribute("x", originalx * widthScale);
+          }
+          var originaly = myElement.children[i].getAttribute("y")
+          if (originaly != null) {
+            myElement.children[i].setAttribute("y", originaly * heightScale);
+          }
+        }
+      },
+      resizeSvg() {
+        console.log("resize");
+
+        var widthScale = this.$refs.responsive.clientWidth / 1920.0
+        var heightScale = this.$refs.responsive.clientHeight / 1080.0
+        var containerHeight = this.$refs.responsive.clientHeight;
+        var containerWidth = this.$refs.responsive.clientWidth;
+        console.log(widthScale);
+        console.log(heightScale);
+        document.getElementById("in_cabinet").setAttribute("width", containerWidth);
+        document.getElementById("in_cabinet").setAttribute("height", containerHeight);
+
+        document.getElementById("in_cabinet_bg").setAttribute("width", containerWidth);
+        document.getElementById("in_cabinet_bg").setAttribute("height", containerHeight);
+
+        document.getElementById("in_cabinet_bg").setAttribute("viewBox", "0 0 " + containerWidth + " " +
+          containerHeight);
+        document.getElementById("in_cabinet").setAttribute("viewBox", "0 0 " + containerWidth + " " + containerHeight);
+
+        var myElement = document.getElementById('in_cabinet');
+
+        this.resizeChild(myElement, widthScale, heightScale);
+
+        myElement = document.getElementById('in_cabinet_bg');
+
+        this.resizeChild(myElement, widthScale, heightScale);
+
+      },
     },
     //onCreate
     mounted() {
+      this.resizeSvg();
       this.$store.commit(
         "setFloatingTemplate",
         '<img  width="100" height="100" src="' + manualIcon + '"></img>'

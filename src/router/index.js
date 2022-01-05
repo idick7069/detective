@@ -6,6 +6,7 @@ import Welcome from '../components/Welcome.vue';
 import Town from '../components/Town.vue';
 import Scale from '../components/Scale.vue';
 import Stomach from '../components/Stomach.vue';
+import TempSence from '../components/TempSence.vue'
 
 const routes = [
   {
@@ -34,6 +35,11 @@ const routes = [
         path: '/Stomach',
         name: 'Stomach',
         component: Stomach
+      }, {
+        path: '/TempSence/:id',
+        name: 'TempSence',
+        props: true,
+        component: TempSence
       }
     ]
   },
