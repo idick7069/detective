@@ -28,16 +28,26 @@
       },
       onClick(event) {
         let targetId = event.target.id
+        let targetArray = [
+          'station',
+          'school',
+          'stomach',
+          'lung',
+          'heart',
+          'park',
+          'nerve',
+          'community'
+        ]
         if (targetId == 'stomach') {
           document.querySelector('[data-name="pin-stomach"]').style.animation = 'none';
           this.$router.push({
             name: "Stomach"
           })
-        } else {
+        } else if(targetArray.indexOf(targetId) != -1){
           this.$router.push({
-            name: 'TempSence', 
+            name: 'TempSence',
             params: {
-             id: targetId
+              id: targetId
             }
           })
         }

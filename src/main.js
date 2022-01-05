@@ -11,6 +11,9 @@ import {
   createStore
 } from 'vuex'
 
+import vue3videoPlay from 'vue3-video-play' // 引入组件
+import 'vue3-video-play/dist/style.css' // 引入css
+
 // Create a new store instance.
 export const store = createStore({
   state() {
@@ -70,4 +73,5 @@ createApp(App)
   .use(store)
   .use(router)
   .use(vuetify)
+  .use(vue3videoPlay)
   .mount('#app')

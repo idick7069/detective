@@ -6,13 +6,14 @@
   <!-- <v-container> -->
   <Toolbar />
   <!-- <v-responsive :aspect-ratio="16/9"> -->
-  <v-img :width="width" :src="welcome"> </v-img>
+  <!-- <v-img :width="width" :src="welcome"> </v-img> -->
   <!-- </v-responsive> -->
   <!-- <div style="height:1080px width:1920">
       <v-img :src="welcome" />
     </div> -->
   <!-- <v-img :width="width" :height="height" :src="welcome"> </v-img>   -->
   <!-- <v-responsive :aspect-ratio="16/9"> -->
+  <AnimatePage></AnimatePage>
   <v-responsive :aspect-ratio="16/9">
     <Town></Town>
   </v-responsive>
@@ -24,6 +25,7 @@
   import welcome from "../assets/welcome.png";
   import Town from "../components/Town.vue"
   import Toolbar from "../components/Toolbar.vue"
+  import AnimatePage from "../components/Animate.vue"
   export default {
     name: "Container",
     data: () => ({
@@ -33,7 +35,8 @@
     }),
     components: {
       Town,
-      Toolbar
+      Toolbar,
+      AnimatePage
     }
   };
 </script>

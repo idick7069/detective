@@ -5,7 +5,7 @@
         <!-- <v-app-bar-nav-icon @click="drawer = !drawer" style="background-color:'tansparent'">
              <v-icon>mdi-menu</v-icon>
       </v-app-bar-nav-icon> -->
-        <v-btn flat color="transparent" width="180" height="180">
+        <v-btn flat color="transparent" width="180" height="180" style="pointer-events: auto;">
           <v-img :src="IconComponent" @click="drawer = !drawer" position="0 0"></v-img>
           <!-- <IconComponent  @click="drawer = !drawer" position="0 0"/> -->
         </v-btn>
