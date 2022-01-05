@@ -71,9 +71,6 @@
       },
     },
     methods: {
-      say: function (message) {
-        // alert(message);
-      },
       closeDialog() {
         this.dialog = false
         this.$store.commit("setDialogOpen", false);
@@ -98,7 +95,7 @@
 
   .fixedContainer {
     position: fixed;
-    transform: translate(-50px, -50px);
+    transform: translate(-10%, -10%);
     z-index: 2;
   }
 
