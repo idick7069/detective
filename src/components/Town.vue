@@ -2,13 +2,12 @@
   <!-- Provides the application the proper gutter -->
 
   <!-- <v-container> -->
-
-
-  <div class="townBackground" ref="responsive" v-html="townBackground"></div>
-  <div class="townCar" v-html="townCar"></div>
-  <div class="townBuilding" v-html="townBuilding"  @click="onClick($event)" @mouseover="nextTab($event)">
+  <div ref="responsive" style="width:100vw;height:56.25vw">
+    <div class="townBackground" v-html="townBackground"></div>
+    <div class="townCar" v-html="townCar"></div>
+    <div class="townBuilding" v-html="townBuilding" @click="onClick($event)" @mouseover="nextTab($event)">
+    </div>
   </div>
-
   <!-- </v-container> -->
 </template>
 
@@ -36,11 +35,32 @@
           })
         }
       },
+      resizeChild(myElement, widthScale, heightScale) {
+
+        for (let i = 0; i < myElement.children.length; i++) {
+          var reSizeWidth = myElement.children[i].getAttribute("width") * widthScale
+          var reSizeHeight = myElement.children[i].getAttribute("height") * heightScale
+          myElement.children[i].setAttribute("width", reSizeWidth);
+          myElement.children[i].setAttribute("height", reSizeHeight);
+          var originalx = myElement.children[i].getAttribute("x")
+          if (originalx != null) {
+            myElement.children[i].setAttribute("x", originalx * widthScale);
+          }
+          var originaly = myElement.children[i].getAttribute("y")
+          if (originaly != null) {
+            myElement.children[i].setAttribute("y", originaly * heightScale);
+          }
+        }
+      },
       resizeSvg() {
         console.log("resize");
-        console.log(this.$refs.responsive.clientHeight);
+
+        var widthScale = this.$refs.responsive.clientWidth / 1920.0
+        var heightScale = this.$refs.responsive.clientHeight / 1080.0
         var containerHeight = this.$refs.responsive.clientHeight;
         var containerWidth = this.$refs.responsive.clientWidth;
+        console.log(widthScale);
+        console.log(heightScale);
         document.getElementById("town-car").setAttribute("width", containerWidth);
         document.getElementById("town-building").setAttribute("width", containerWidth);
         document.getElementById("town-bg").setAttribute("width", containerWidth);
@@ -51,10 +71,23 @@
           containerHeight);
         document.getElementById("town-car").setAttribute("viewBox", "0 0 " + containerWidth + " " + containerHeight);
         document.getElementById("town-bg").setAttribute("viewBox", "0 0 " + containerWidth + " " + containerHeight);
+
+        var myElement = document.getElementById('town-bg');
+
+        this.resizeChild(myElement, widthScale, heightScale);
+
+        myElement = document.getElementById('town-car');
+
+        this.resizeChild(myElement, widthScale, heightScale);
+
+        myElement = document.getElementById('town-building');
+
+        this.resizeChild(myElement, widthScale, heightScale);
+
       },
     },
     mounted() {
-      // this.resizeSvg();
+      this.resizeSvg();
     },
   }
 </script>

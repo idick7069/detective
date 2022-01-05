@@ -2,7 +2,7 @@
   <!-- Sizes your content based upon application components -->
   <v-main style="padding: 0px">
     <!-- Provides the application the proper gutter -->
-    <v-container fluid>
+    <!-- <v-container fluid> -->
       <router-view></router-view>
       <div>
         <v-btn class="fixedContainer" dark bottom right height="100" width="100" color="red" variant="default">
@@ -16,7 +16,7 @@
           </v-dialog>
         </v-btn>
       </div>
-    </v-container>
+    <!-- </v-container> -->
   </v-main>
 </template>
 
@@ -86,7 +86,7 @@
 <style scoped>
   @media (min-width: 1920px) {
     .v-container {
-      max-width: 1920px;
+      max-width: 100vw;
       padding: 0px;
     }
   }
