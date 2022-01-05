@@ -43,7 +43,7 @@
           this.$router.push({
             name: "Stomach"
           })
-        } else if(targetArray.indexOf(targetId) != -1){
+        } else if (targetArray.indexOf(targetId) != -1) {
           this.$router.push({
             name: 'TempSence',
             params: {
@@ -53,6 +53,7 @@
         }
       },
       resizeChild(myElement, widthScale, heightScale) {
+        console.log("resize child")
 
         for (let i = 0; i < myElement.children.length; i++) {
           var reSizeWidth = myElement.children[i].getAttribute("width") * widthScale

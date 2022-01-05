@@ -89,9 +89,23 @@
     }
   }
 
+  @media (min-width: 1px) {
+    .v-container {
+      max-width: 100vw;
+      padding: 0px;
+    }
+  }
+
   .fixedContainer {
     position: fixed;
     transform: translate(-50px, -50px);
+    z-index: 2;
+  }
+
+  @media (orientation: portrait) {
+    .fixedContainer {
+      z-index: -1;
+    }
   }
 
   .dialogBg {
