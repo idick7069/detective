@@ -72,7 +72,7 @@
     },
     methods: {
       say: function (message) {
-        alert(message);
+        // alert(message);
       },
       closeDialog() {
         this.dialog = false

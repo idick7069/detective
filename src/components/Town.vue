@@ -103,10 +103,31 @@
         this.resizeChild(myElement, widthScale, heightScale);
 
       },
+      handleOrientationChange() {
+        const orientation = window.screen.orientation.type
+        if (orientation === "portrait-primary") {
+          // portrait mode
+        } else if (orientation === "landscape-primary") {
+          this.resizeSvg();
+          // landscape mode
+        }
+      }
     },
     mounted() {
       this.resizeSvg();
     },
+    // created() {
+    //   window.addEventListener(
+    //     "orientationchange",
+    //     this.handleOrientationChange
+    //   );
+    // },
+    // destroyed() {
+    //   window.removeEventListener(
+    //     "orientationchange",
+    //     this.handleOrientationChange
+    //   );
+    // },
   }
 </script>
 <style>

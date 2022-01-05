@@ -48,7 +48,7 @@
 </script>
 <style scoped>
   .mask {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.377);
     width: 100vw;
     height: 100vh;
     z-index: 3;
