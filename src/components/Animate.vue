@@ -26,7 +26,6 @@
                 title: "",
                 muted: false,
                 control: false,
-                loop: true,
                 src: animationSrc,
                 poster: posterSrc
             })

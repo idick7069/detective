@@ -241,6 +241,17 @@ export default {
   transform-box: fill-box;
 }
 
+[data-name="station"],
+[data-name="school"],
+[data-name="stomach"],
+[data-name="lung"],
+[data-name="heart"],
+[data-name="park"],
+[data-name="nerve"],
+[data-name="community"] {
+  cursor: pointer;
+}
+
 @keyframes floating {
   0% {
     transform: translate(0, 0px);

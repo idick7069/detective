@@ -186,8 +186,9 @@ export default {
   top: 0;
   left: 0;
   position: absolute;
+  cursor: pointer;
 }
-[data-name="cigarette"] {
+#cigarette {
   cursor: v-bind(selectedCursor);
 }
 </style>
