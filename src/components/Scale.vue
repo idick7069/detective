@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import scaleBackground from "../assets/scale_form.svg?raw";
-import scaleContent from "../assets/scale_content.svg?raw"
+import scaleBackground from "../assets/dialog/scale_bg.svg?raw";
+import scaleContent from "../assets/dialog/scale_content.svg?raw"
 export default {
   name: "Scale",
   data: () => ({

@@ -88,10 +88,7 @@ export default {
       this.dialog = this.$store.state.dialogOpen;
     },
     dialog: function () {
-      console.log("dialog狀態改變");
-      //  this.resizeSvg()
       window.setTimeout(() => {
-        console.log("Hello!");
         this.resizeSvg();
       }, 500);
     },
@@ -102,7 +99,6 @@ export default {
       this.$store.commit("setDialogOpen", false);
     },
     resizeChild(myElement, widthScale, heightScale) {
-      console.log("resize child");
 
       for (let i = 0; i < myElement.children.length; i++) {
         var reSizeWidth =
@@ -128,11 +124,6 @@ export default {
       var heightScale = (window.screen.width * 0.5625) / 1080.0;
       var containerWidth = window.screen.width;
       var containerHeight = window.screen.width * 0.5625;
-      console.log(widthScale);
-      console.log(heightScale);
-      console.log(containerWidth);
-      console.log(containerHeight);
-      console.log("測試" + document.getElementById("scale-bg"));
       if (document.getElementById("manual-bg") != null) {
         document
           .getElementById("manual-bg")
@@ -238,10 +229,5 @@ export default {
 
 .closeBtn {
   transform: translate(-10px, -10px);
-}
-</style>
-<style>
-[data-name="red_tag"] {
-  pointer-events: auto;
 }
 </style>

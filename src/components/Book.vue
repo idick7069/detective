@@ -4,8 +4,8 @@
 </template>
 
 <script>
-import book from "../assets/manual.svg?raw";
-import manual_item_1 from "../assets/manual_item_1.svg?raw"
+import book from "../assets/dialog/manual_bg.svg?raw";
+import manual_item_1 from "../assets/dialog/manual_content.svg?raw"
 export default {
   name: "book",
   data: () => ({

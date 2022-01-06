@@ -118,7 +118,6 @@ export default {
       this.resizeChild(myElement, widthScale, heightScale);
     },
     handleOrientationChange() {
-      console.log("change");
       const orientation = window.screen.orientation.type;
       if (orientation === "portrait-primary") {
         // portrait mode
@@ -145,8 +144,6 @@ export default {
       '<img  width="100" height="100" src="' + manualIcon + '"></img>'
     );
     this.$store.commit("setFloatingDialog", false);
-
-    console.log("amounted");
 
     const orientation = window.screen.orientation.type;
 

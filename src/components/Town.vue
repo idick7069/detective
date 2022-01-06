@@ -137,7 +137,6 @@ export default {
       this.resizeChild(myElement, widthScale, heightScale);
     },
     handleOrientationChange() {
-      console.log("change");
       const orientation = window.screen.orientation.type;
       if (orientation === "portrait-primary") {
         // portrait mode
@@ -155,8 +154,6 @@ export default {
     },
   },
   mounted() {
-    console.log("amounted");
-
     const orientation = window.screen.orientation.type;
 
     if (
@@ -171,11 +168,9 @@ export default {
     }
   },
   created() {
-    console.log("創建");
     window.addEventListener("orientationchange", this.handleOrientationChange);
   },
   destroyed() {
-    console.log("摧毀");
     window.removeEventListener(
       "orientationchange",
       this.handleOrientationChange
@@ -187,26 +182,7 @@ export default {
 .townCar,
 .townBackground,
 .townBuilding {
-  /* height: 56.25vw;
-    width: 100vw; */
   position: absolute;
-}
-
-[data-name="sign"]:hover {
-  animation: drag 2s infinite;
-  transform-origin: center center;
-  transform-box: fill-box;
-}
-
-#trigger_door_man:hover ~ #cart {
-  /* animation: drag 2s infinite;
-  transform-origin: center bottom;
-  transform-box: fill-box; */
-  opacity: 1;
-}
-
-[data-name="trigger_door_man"] {
-  cursor: v-bind(selectedCursor);
 }
 
 [data-name="stomach"] {
@@ -217,15 +193,6 @@ export default {
   animation: floating 2s infinite;
   transform-origin: center center;
   transform-box: fill-box;
-}
-
-#cart {
-  opacity: 0;
-  -webkit-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  -ms-transition: all 500ms ease-in-out;
-  -o-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
 }
 
 [data-name="pin-station"],
@@ -267,32 +234,6 @@ export default {
 
   100% {
     transform: translate(0, -0px);
-  }
-}
-
-@keyframes drag {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  80% {
-    transform: rotate(0deg);
-  }
-
-  85% {
-    transform: rotate(10deg);
-  }
-
-  90% {
-    transform: rotate(-6deg);
-  }
-
-  95% {
-    transform: rotate(3deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
   }
 }
 </style>
