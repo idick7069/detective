@@ -9,7 +9,6 @@
       class="townBuilding"
       v-html="townBuilding"
       @click="onClick($event)"
-      @mouseover="nextTab($event)"
     ></div>
   </div>
   <!-- </v-container> -->
@@ -28,11 +27,6 @@ export default {
     isResized: false,
   }),
   methods: {
-    nextTab(event) {
-      console.log(
-        "You clicked on an element with class name = " + event.target.id
-      );
-    },
     onClick(event) {
       let targetId = event.target.id;
       let targetArray = [
